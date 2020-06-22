@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="SipebiPrototype.FormalWordListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SipebiPrototype"
+             xmlns:core="clr-namespace:SipebiPrototype.Core;assembly=SipebiPrototype.Core"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="750"
+             >
+  <Grid d:DataContext="{x:Static core:FormalWordListDesignModel.DesignInstance}"
+        DataContext="{x:Static core:FormalWordListViewModel.Instance}"
+        Background="Transparent"
+        >
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+      <ItemsControl ItemsSource="{Binding Items}"
+                    HorizontalContentAlignment="Stretch">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <local:FormalWordListItemControl/>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+  </Grid>
+</UserControl>

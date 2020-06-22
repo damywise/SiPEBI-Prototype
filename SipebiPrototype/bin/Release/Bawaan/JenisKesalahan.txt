@@ -1,0 +1,17 @@
+//Fail ini berisikan jenis kesalahan bawaan yang dimiliki oleh SiPEBI
+//Format penulisan fail ini adalah sbb.:
+//
+//  Kode Kesalahan => Jenis Kesalahan => Penjelasan
+//
+//Petunjuk: Anda dapat mengganti [Jenis Kesalahan] dan [Penjelasan] dalam fail ini
+//PERINGATAN: JANGAN MENGGANTI [Kode Kesalahan] yang dalam fail ini
+
+[KBBI-BTB] => [KBBI] Bentuk Takbaku => [KBBI] Kata yang digunakan merupakan bentuk takbaku
+[SiPEBI-BT] => [SiPEBI] Bentuk Terikat => [SiPEBI] Kata yang digunakan merupakan bentuk terikat. Penulisannya harus disambung dengan kata sesudahnya
+[SiPEBI-HKD] => [SiPEBI] Huruf Kapital Definit => [SiPEBI] Kata yang digunakan harus selalu ditulis menggunakan huruf kapital
+[SiPEBI-TBTM] => [SiPEBI] Tanda Baca Tidak Menempel => [SiPEBI] Tanda baca yang digunakan harus menempel pada kata sebelumnya
+[SiPEBI-KA] => [SiPEBI] Kata Ambigu => [SiPEBI] Kata yang digunakan merupakan kata dengan kemungkinan ejaan yang ambigu
+[SiPEBI-KKT] => [SiPEBI] Kata Keterangan Tempat => [SiPEBI] Kata yang digunakan merupakan kata keterangan tempat, seharusnya ditulis terpisah dari kata depan di-, ke-, dan dari-
+[SiPEBI-KKS] => [SiPEBI] Kata Konjungsi Subordinatif => [SiPEBI] Kata yang digunakan merupakan kata konjungsi subordinatif, tidak perlu dituliskan dengan didahului koma pada kata sebelumnya
+[SiPEBI-TBL] => [SiPEBI] Tanda Baca Lepas => [SiPEBI] Tanda baca ini merupakan tanda baca yang lepas, perlu disambungkan dengan elemen/kata terdekatnya
+[SiPEBI-KLDTB] => [SiPEBI] Kata Lepas dari Tanda Baca => [SiPEBI] Kata ini tidak ditulis menempel pada tanda bacanya

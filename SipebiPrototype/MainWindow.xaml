@@ -1,0 +1,233 @@
+﻿<Window x:Class="SipebiPrototype.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SipebiPrototype"
+        xmlns:core="clr-namespace:SipebiPrototype.Core;assembly=SipebiPrototype.Core"
+        mc:Ignorable="d"
+        WindowStyle="None" 
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        x:Name="AppWindow"
+        Icon="Images/Logo/icon_refined2.png"
+        MinWidth="{Binding WindowMinimumWidth}"
+        MinHeight="{Binding WindowMinimumHeight}"
+        Deactivated="AppWindow_Deactivated"
+        Activated="AppWindow_Activated"
+        Title="SiPEBI, by Ian K &#x00A9; 2019" Height="640" Width="1080">
+    <!-- WindowStyle="None" To make this windows custom-->
+  <Window.Resources>
+    <!-- To replace the default template of the window-->
+    <Style TargetType="{x:Type local:MainWindow}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Window}">
+            <!-- Give border(s) to the custom window-->
+            <!-- FallbackValue is default value when the default value is not found-->
+            <!-- Outer border with dropshadow margin-->
+            <Border Background="Transparent" 
+                    Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
+              <!-- Main window outline-->
+              <Grid>
+                <!-- Opacity mask for corners on grid-->
+                <Border x:Name="Container"
+                        Background="{StaticResource BackgroundLightBrush}"
+                        CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"/>
+
+                <!-- Window border and dropshadow-->
+                <Border CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}"
+                      Background="{Binding ForegroundLightBrush, FallbackValue=White}">
+                  <Border.Effect>
+                    <!-- ShadowDepth = distance from centre-->
+                    <DropShadowEffect ShadowDepth="0" Opacity="0.2"/>
+                  </Border.Effect>
+                </Border>
+
+                <!-- The main window content-->
+                <Grid>
+                  <!-- Corner clipping-->
+                  <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=Container}"/>
+                  </Grid.OpacityMask>
+
+                  <Grid.RowDefinitions>
+                    <!-- Title Bar-->
+                    <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=50}"/>
+
+                    <!-- Drop shadow-->
+                    <RowDefinition Height="Auto"/>
+
+                    <!-- Window content-->
+                    <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+
+                  <!-- Title bar-->
+                  <!-- we put Panel.ZIndex="1" to bring out the grid to the foreground so that we can click the grid-->
+                  <Grid Grid.Column="0" Panel.ZIndex="1">
+                    <Grid.ColumnDefinitions>
+                      <!-- For the top-leftmost icon-->
+                      <ColumnDefinition Width="Auto"/>
+                      <!-- Title -->
+                      <ColumnDefinition Width="*"/>
+                      <!-- Window Button(s)-->
+                      <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Icon -->
+                    <!-- The binding is to retain the default function of the icon in the windows-->
+                    <!-- All these are moved to Buttons Style 
+                          Style="{StaticResource Hoverless}" 
+                            Padding="8"                            
+                            WindowChrome.IsHitTestVisibleInChrome="True" -->
+                    <Button Padding="33 5"
+                      Style="{StaticResource SystemIconButton}" Command="{Binding MenuCommand}">
+                      <Image Source="/Images/Logo/logo-small.png"/>
+                    </Button>
+
+                    <!-- Title-->
+                    <!-- Basically, Viewbox keeps it in the correct size, that is if the FontSize is too big, it will use maximum height-->
+                    <Viewbox Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
+                      <!--- Relative source, because it is taken from the Window itself, not from the ViewModel-->
+                      <StackPanel>
+                        <Border Margin="0 0 0 0"
+                                Background="{StaticResource BackgroundKbbiBlueBrush}"
+                                BorderThickness="1" BorderBrush="{StaticResource ForegroundGoldBrush}"
+                                CornerRadius="10">
+                          <TextBlock FontFamily="{StaticResource LatoBold}"                                    
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   TextAlignment="Center">
+                          <Run Text="S" Foreground="{StaticResource WordGoldBrush}"/><Run Text="i" Foreground="{StaticResource WordGoldBrush}"/><Run Text="P" Foreground="{StaticResource WordGoldBrush}"/><Run Text="E" Foreground="{StaticResource WordGoldBrush}"/><Run Text="B" Foreground="{StaticResource WordGoldBrush}"/><Run Text="I" Foreground="{StaticResource WordGoldBrush}"/>
+                          </TextBlock>
+                        </Border>
+                        <TextBlock Margin="0 0 0 0"
+                          Text="by Ian K &#x00A9; 2019" 
+                                   Foreground="{StaticResource ForegroundDarkBrush}" 
+                                   FontSize="{StaticResource FontSizeSmaller}" 
+                                   TextAlignment="Center"/>
+                      </StackPanel>
+                      <!--<TextBlock 
+                        Style="{StaticResource HeaderText}"
+                        Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title, FallbackValue='Welcome, friend!'}"/>-->
+                    </Viewbox>
+
+                    <!-- Window Buttons-->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                      <Button Command="{Binding MinimizeCommand}" Style="{StaticResource WindowControlButton}" 
+                              Content="_"/>
+                      <Button Command="{Binding MaximizeCommand}" Style="{StaticResource WindowControlButton}" 
+                              Content="[ ]"/>
+                      <Button Command="{Binding CloseCommand}" Style="{StaticResource WindowCloseButton}" 
+                              Content="X"/>
+                    </StackPanel>
+                  </Grid>
+
+                  
+                  <!-- Drop Shadow-->
+                  <Border Grid.Row="1" Height="1" BorderThickness="0 1 0 0">
+                    <!-- Underline border line with gradient -->
+                    <Border.BorderBrush>
+                      <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="{StaticResource ColorGoldenrod}" Offset="0.0"/>
+                        <GradientStop Color="{StaticResource ColorGoldenrod}" Offset="0.5"/>
+                        <GradientStop Color="{StaticResource ColorGoldenrod}" Offset="1.0"/>
+                      </LinearGradientBrush>
+                    </Border.BorderBrush>
+                  </Border>
+                  
+                  <!-- Page content-->
+                  <!-- Now we are going to get rid of the red-not-rounded corner issue when close button is mouse-hovered -->
+                  <Border Grid.Row="2" Padding="{Binding InnerContentPadding}"
+                          ClipToBounds="True">
+                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                  </Border>
+                  <!--<Border Grid.Row="1" Padding="{Binding InnerContentPadding}" Background="{StaticResource BackgroundBlueBrush}">
+                    <Border>
+                      <Border.Background>
+                        <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500"
+                                    ImageSource="/Images/Backgrounds/emoji-background.png"/>
+                      </Border.Background>
+                      <ContentPresenter Content="{TemplateBinding Content}"/>
+                    </Border>
+                  </Border>-->
+                </Grid>
+              </Grid>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </Window.Resources>
+  <WindowChrome.WindowChrome>
+    <!-- To set up the name of this class does (??) it means, make the custom window resizable, draggable, etc-->
+    <WindowChrome 
+      ResizeBorderThickness="{Binding ResizeBorderThickness}"
+      CaptionHeight="{Binding TitleHeight}"
+      CornerRadius="0"
+      GlassFrameThickness="0"
+      />
+    <!-- Glass frame is to show very thin blue box surrounding the window. Setting it to 0 means we does not want it.-->
+  </WindowChrome.WindowChrome>
+  <Border Background="{StaticResource BackgroundVeryLightBrush}">
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <!-- Blue background image-->
+      <Grid.Background>
+        <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="1080 0 2160 800"
+                                    ImageSource="/Images/Backgrounds/kbbi-background-processed-3.png"/>
+      </Grid.Background>
+
+      <!-- Dimmed overlay -->
+      <Border Grid.ColumnSpan="2"
+              Opacity="0.3"
+              Panel.ZIndex="10">
+        <Border Background="{StaticResource ForegroundVeryDarkBrush}"
+                local:AnimateFadeInProperty.Value ="{Binding DimmableOverlayVisible}"
+                />
+      </Border>
+
+      <!-- NavigationUIVisibility="Hidden" hides the navigation but doing Alt + Left still do the navigation-->
+      <local:PageHost Grid.Column="1"
+        d:DataContext=""
+        DataContext="{Binding ApplicationViewModel.CurrentPage,
+                        Source={x:Static local:ViewModelLocator.Instance},
+                        Converter={local:ApplicationPageValueConverter}}"
+        CurrentPage="{Binding}" />
+      <!-- Note that CurrentPage is a DependencyProperty-->
+      <!--<Frame Grid.Column="1" 
+             local:NoFrameHistoryProperty.Value="True"
+             x:Name="MainFrame" 
+             d:DataContext=""
+             DataContext="{Binding ApplicationViewModel.CurrentPage, 
+                Source={x:Static local:ViewModelLocator.Instance},
+                Converter={local:ApplicationPageValueConverter}}"
+             Content="{Binding}"
+             Background="Transparent"/>-->
+
+      <!-- Side Menu-->
+      <local:SideMenuControl          
+        Width="Auto"
+        local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible,
+          Source={x:Static local:ViewModelLocator.Instance}}">
+        <local:OptionListControl/>
+        <!--<local:OptionListItemControl
+          Height="60"
+          VerticalAlignment="Top"
+          />-->
+      </local:SideMenuControl>
+
+      <!-- WPF default behaviour: if the grid does not have any content, the round corner clipper does not work!-->
+      <!--<TextBlock Text="Welcome, friend!" FontSize="40"/>
+    <TextBlock Text="Welcome, friend!" FontSize="40" FontFamily="{StaticResource LatoThin}"/>
+    <TextBlock Text="Welcome, friend!" FontSize="40" FontFamily="{StaticResource LatoRegular}"/>-->
+      <!--<Label Content="Lato Font"></Label>
+    <TextBox Text="Lato Font"></TextBox>
+    <TextBlock Text="Lato Font"></TextBlock>-->
+      <!--<TextBlock Text="{Binding Test}"/>-->
+      <!--<Button Content="Test"/>-->
+    </Grid>
+  </Border>
+</Window>

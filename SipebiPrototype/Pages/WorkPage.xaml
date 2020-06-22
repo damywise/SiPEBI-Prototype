@@ -1,0 +1,199 @@
+﻿<local:BasePage 
+  x:TypeArguments="core:WorkViewModel"
+  x:Class="SipebiPrototype.WorkPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:local="clr-namespace:SipebiPrototype"
+  xmlns:core="clr-namespace:SipebiPrototype.Core;assembly=SipebiPrototype.Core"
+  x:Name="Page"
+  mc:Ignorable="d" 
+  d:DesignHeight="600" d:DesignWidth="900"
+  >
+  <Grid DataContext="{x:Static core:WorkViewModel.Instance}"
+        Background="Transparent"
+        Focusable="True"
+        local:GetFocusedProperty.Value="{Binding RefocusRequest}"
+        >
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*"/>
+      <ColumnDefinition Width="1*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40"/>
+      <RowDefinition Height="1*"/>
+      <RowDefinition MaxHeight="400">
+        <RowDefinition.Style>
+          <Style TargetType="{x:Type RowDefinition}">
+            <Setter Property="Height" Value="1*" />
+            <Style.Triggers>
+              <DataTrigger Binding="{Binding AnalysisResultIsOpened}" Value="False">
+                <Setter Property="Height" Value="0" />
+              </DataTrigger>
+            </Style.Triggers>
+          </Style>
+        </RowDefinition.Style>
+      </RowDefinition>
+      <RowDefinition Height="40"/>
+    </Grid.RowDefinitions>
+    
+    <!-- Original text header -->
+    <Border 
+      Grid.ColumnSpan="1"
+      Background="{StaticResource BackgroundBlueBrush}"
+      ToolTip="Naskah/teks asli yang hendak disunting"
+      />
+    <TextBlock
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center"
+      FontFamily="{StaticResource FontAwesome}"      
+      FontSize="{StaticResource FontSizeXLarge}"
+      Foreground="{StaticResource ForegroundLightBrush}"
+      Text="{StaticResource FontAwesomeOriginalWordWithIcon}"
+      ToolTip="Naskah/teks asli yang hendak disunting"
+      />
+
+    <!-- Corrected text header -->
+    <Border Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Background="{StaticResource BackgroundGreenBrush}"
+            ToolTip="Naskah/teks hasil suntingan ejaan SiPEBI"
+            />
+    <TextBlock Grid.Column="1"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               FontFamily="{StaticResource FontAwesome}"      
+               FontSize="{StaticResource FontSizeXLarge}"
+               Foreground="{StaticResource ForegroundLightBrush}"
+               Text="{StaticResource FontAwesomeCorrectedWordWithIcon}"
+               ToolTip="Naskah/teks hasil suntingan ejaan SiPEBI"
+               />
+    
+    <!-- Original text -->
+    <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                  Grid.Row="1"
+                  Focusable="True"
+                  DockPanel.Dock="Left"
+                  Padding="0 8 0 8"
+                  Background="{StaticResource BackgroundSoftAliceBlueBrush}"
+                  Name="OriginalTextScrollViewer"
+                  >
+      <TextBox Style="{StaticResource WorkTextBox}" 
+               Text="{Binding OriginalText}"
+               Focusable="True"
+               Foreground="{StaticResource WordKbbiBlueBrush}"
+               Background="{StaticResource BackgroundSoftAliceBlueBrush}"
+               Name="OriginalTextBox"
+               />
+    </ScrollViewer>
+
+    <!-- Corrected text -->
+    <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                  Grid.Row="1" Grid.Column="1"
+                  Focusable="True"
+                  DockPanel.Dock="Right"
+                  Padding="0 8 0 8"
+                  Background="{StaticResource BackgroundSoftAliceGreenBrush}"
+                  Name="CorrectedTextScrollViewer"
+                  >
+    <TextBox Style="{StaticResource WorkTextBox}" 
+             Text="{Binding CorrectedText}"
+             Focusable="True"
+             Foreground="DarkGreen"
+             Background="{StaticResource BackgroundSoftAliceGreenBrush}"
+             Name="CorrectedTextBox"
+             />
+    </ScrollViewer>
+    
+    <!-- Analysis Page -->
+    <!--MaxHeight="{Binding ElementName=MainGrid, Path=ActualHeight, 
+                    Converter={local:MaxHeightConverter}, ConverterParameter=81}"-->
+    <local:DiagnosticListControl 
+      Background="{StaticResource BackgroundSoftAliceRedBrush}"
+      Grid.Row="2" Grid.ColumnSpan="2"
+      />
+
+    <!-- Menu buttons -->
+    <Grid Grid.ColumnSpan="2" Grid.Row="3">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1*"/>
+      </Grid.ColumnDefinitions>
+
+      <!-- Load button -->
+      <Border Grid.Column="0"
+              Background="{StaticResource BackgroundGoldenrodBrush}"
+              CornerRadius="0">
+        <Button Style="{StaticResource TransparentAdjustableButton}"
+                Grid.Row="2" 
+                Padding="0"
+                Margin="0"   
+                ToolTip="Muat teks asli dari fail pada komputer"
+                Background="{StaticResource BackgroundBlueBrush}"
+                FontSize="{StaticResource FontSizeXLarge}"            
+                FontFamily="{StaticResource FontAwesome}"
+                Content="{StaticResource FontAwesomeLoadWordWithIcon}"                
+                Command="{Binding LoadFileCommand}"
+                />
+      </Border>
+
+      <!-- Correct button -->
+      <Border Grid.Column="1"
+              Background="{StaticResource BackgroundGoldenrodBrush}"
+              CornerRadius="0">
+        <Button Style="{StaticResource TransparentAdjustableButton}"
+                Grid.Row="2" 
+                Padding="0"
+                Margin="0"   
+                ToolTip="Perbaiki teks dengan SiPEBI"
+                Background="{StaticResource BackgroundOrangeBrush}"
+                local:IsBusyProperty.Value="{Binding CorrectionIsRunning}"
+                FontSize="{StaticResource FontSizeXLarge}"            
+                FontFamily="{StaticResource FontAwesome}"
+                Content="{StaticResource FontAwesomeCorrectWordWithIcon}"                
+                Command="{Binding CorrectionCommand}"
+                />
+      </Border>
+
+      <!-- Save button -->
+      <Border Grid.Column="2"
+              Background="{StaticResource BackgroundGoldenrodBrush}"
+              CornerRadius="0">
+        <Button Style="{StaticResource TransparentAdjustableButton}"
+                Grid.Row="2" 
+                Padding="0"
+                Margin="0" 
+                ToolTip="Simpan teks hasil perbaikan"
+                Background="{StaticResource BackgroundGreenBrush}"
+                local:IsBusyProperty.Value="{Binding SaveIsRunning}"
+                FontSize="{StaticResource FontSizeXLarge}"            
+                FontFamily="{StaticResource FontAwesome}"
+                Content="{StaticResource FontAwesomeSaveWordWithIcon}"                
+                Command="{Binding SaveCommand}"
+              />
+      </Border>
+
+
+     <!-- Diagnose button -->
+      <Border Grid.Column="3"
+              Background="{StaticResource BackgroundGoldenrodBrush}"
+              CornerRadius="0">
+        <Button Style="{StaticResource TransparentAdjustableButton}"
+                Grid.Row="2" 
+                Padding="0"
+                Margin="0"   
+                local:IsBusyProperty.Value="{Binding AnalysisUpdateIsRunning}"
+                ToolTip="{Binding AnalysisResultButtonToolTip}"
+                Background="{StaticResource BackgroundRedBrush}"
+                FontSize="{StaticResource FontSizeXLarge}"            
+                FontFamily="{StaticResource FontAwesome}"
+                Content="{Binding AnalysisResultButtonText}"
+                Command="{Binding AnalysisResultCommand}"
+                />
+      </Border>
+    </Grid>
+  </Grid>
+</local:BasePage>

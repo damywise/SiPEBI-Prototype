@@ -1,0 +1,132 @@
+[BTB01] => Bentuk Takbaku => Kata yang digunakan merupakan bentuk takbaku
+kwitansi -> kuitansi
+frekwensi -> frekuensi
+kwalitas -> kualitas
+kwantitas -> kuantitas
+kwarter	-> kuarter
+faximile -> faksimile
+fax. -> faks.
+inofatif -> inovatif
+transport -> transpor
+raport -> rapor
+propinsi -> provinsi
+sistim -> sistem 
+kordinasi -> koordinasi
+koordinir -> koordinasi
+legalisir -> legalisasi
+akomodir -> akomodasi
+menstimulir -> menstimulasi
+minimalisir -> minimalisasi
+konfrontir -> konfrontasi
+netralisir -> netralisasi
+standard -> standar
+standarisasi -> standardisasi
+selebriti -> selebritas 
+teoritis -> teoretis 
+apotik -> apotek
+atlit -> atlet
+praktek -> praktik
+prosen -> persen
+prosentase -> persentase
+karir -> karier 
+hirarki -> hierarki
+otentik -> autentik
+otopsi -> autopsi
+otodidak -> autodidak
+automatis -> otomatis 
+autonomi -> otonomi
+jender -> gender 
+merjer -> merger 
+jenius -> genius 
+managemen -> manajemen
+jadual -> jadwal
+mushola -> musala 
+sholat -> salat
+shabar -> sabar
+adzan -> azan
+udzur -> uzur
+ramadhan -> ramadan
+wudhu -> wudu
+qubur -> kubur
+qalbu -> kalbu
+maghrib -> magrib
+bathin -> batin
+himbauan -> imbauan
+hutang -> utang
+subsidair -> subsider
+ijin -> izin
+ijasah -> ijazah
+jaman -> zaman
+azas -> asas
+antri -> antre
+bis -> bus
+konkrit -> konkret
+resiko -> risiko
+sekedar -> sekadar
+saksama -> seksama
+nasehat -> nasihat
+kuatir -> khawatir
+kharisma -> karisma
+
+[PMPKT01] => Prefiks (meN-) Pada Konsonan Tajam => Prefiks (meN-) luluh jika ditambahkan pada kata dasar yang berawalan huruf (k, p, t, s) dan bukan berupa gugus konsonan (seperti: pr, st, ks, tr, dll.)
+mengkoordinasikan -> mengoordinasikan
+mengkonsumsi -> mengonsumsi
+mengkarungi -> mengarungi
+mempesona -> memesona
+mempedulikan -> memedulikan
+mempengaruhi -> memengaruhi
+mentargetkan -> menargetkan
+mentoleransi -> menoleransi
+mentasbihkan -> menasbihkan
+mensucikan -> menyucikan
+mensukseskan -> menyukseskan
+mensakralkan -> menyakralkan
+
+[PMPGK01] => Prefiks (meN-) Pada Gugus Konsonan => Prefiks (meN-) tidak luluh jika ditambahkan pada kata dasar yang berawalan gugus konsonan (seperti: pr, st, ks, tr, dll.)
+memroses -> memproses
+memrogram -> memprogram
+
+[KDBHC01] => Kata Dasar Berawalan Huruf C => Prefiks (meN-) berubah menjadi (men-), bukan (meny-), ketika ditambahkan pada kata dasar yang berawalan huruf c
+menyuci -> mencuci
+menyairkan -> mencairkan
+
+[KDSSK01] => Kata Dasar Satu Suku Kata => Prefiks (meN-) berubah menjadi (menge-), bukan (mem-, men-), ketika ditambahkan pada kata dasar yang terdiri atas satu suku kata
+membom -> mengebom
+mentes -> mengetes
+mempel -> mengepel
+
+[KDHAK01] => Kata Dasar dengan Huruf Akhir K => xyz xyz
+kemasukkan -> kemasukan
+kekompakkan -> kekompakan
+
+[00001] => Nama Kesalahan 00001 => Penjelasan kesalahan 00001
+dimasukan -> dimasukkan
+dikontrakan -> dikontrakkan
+ditunjukan -> ditunjukkan
+
+[00002] => Nama Kesalahan 00002 => Penjelasan kesalahan 00002
+penunjukkan -> penunjukan
+pemasukkan -> pemasukan
+penaklukkan -> penaklukkan
+pertunjukkan -> pertunjukan
+penampakkan -> penampakan
+
+[00003] => Nama Kesalahan 00003 => Penjelasan kesalahan 00003
+menampakan -> menampakkan
+menaklukan -> menaklukkan
+
+[00004] => Nama Kesalahan 00004 => Penjelasan kesalahan 00004
+d/a -> d.a.
+u/b -> u.b.
+u/p -> u.p.
+a/n -> a.n.
+s/d -> s.d.
+
+[00005] => Nama Kesalahan 00005 => Penjelasan kesalahan 00005
+dsb -> dsb.
+dst -> dst.
+dll -> dll.
+dkk -> dkk.
+yth -> yth.
+ttd -> ttd.
+sbb -> sbb.

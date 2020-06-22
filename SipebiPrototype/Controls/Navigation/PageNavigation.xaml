@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="SipebiPrototype.PageNavigation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SipebiPrototype"
+             xmlns:core="clr-namespace:SipebiPrototype.Core;assembly=SipebiPrototype.Core"
+             mc:Ignorable="d"
+             d:DesignHeight="50"
+             d:DesignWidth="850"
+             >
+  <Grid d:DataContext="{x:Static core:PageNavigationDesignModel.DesignInstance}"
+        DataContext="{x:Static core:PageNavigationViewModel.Instance}"
+        Background="Transparent"
+        Focusable="True"
+        >
+    <Grid.ColumnDefinitions>
+      <!-- Go to first page -->
+      <ColumnDefinition Width="1*"/>
+      <!-- Go previous 100 -->
+      <ColumnDefinition Width="1*"/>
+      <!-- Go previous 10 -->
+      <ColumnDefinition Width="1*"/>
+      <!-- Go previous -->
+      <ColumnDefinition Width="1*"/>
+      <!-- Page info column -->
+      <ColumnDefinition Width="1*"/>
+      <!-- Go next -->
+      <ColumnDefinition Width="1*"/>
+      <!-- Go next 10 -->
+      <ColumnDefinition Width="1*"/>
+      <!-- Go next 100 -->
+      <ColumnDefinition Width="1*"/>
+      <!-- Go last page -->
+      <ColumnDefinition Width="1*"/>
+    </Grid.ColumnDefinitions>
+  </Grid>
+</UserControl>

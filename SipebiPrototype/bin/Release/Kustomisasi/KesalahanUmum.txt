@@ -1,0 +1,231 @@
+[BTB01] => Bentuk Takbaku => Kata yang digunakan merupakan bentuk takbaku
+kwitansi -> kuitansi
+frekwensi -> frekuensi
+kwalitas -> kualitas
+kwantitas -> kuantitas
+kwarter	-> kuarter
+faximile -> faksimile
+fax. -> faks.
+inofatif -> inovatif
+transport -> transpor
+raport -> rapor
+propinsi -> provinsi
+sistim -> sistem 
+kordinasi -> koordinasi
+koordinir -> koordinasi
+legalisir -> legalisasi
+akomodir -> akomodasi
+menstimulir -> menstimulasi
+minimalisir -> minimalisasi
+konfrontir -> konfrontasi
+netralisir -> netralisasi
+proklamir -> proklamasi
+tolerir -> toleransi
+standard -> standar
+standarisasi -> standardisasi
+selebriti -> selebritas 
+teoritis -> teoretis 
+apotik -> apotek
+atlit -> atlet
+praktek -> praktik
+prosen -> persen
+prosentase -> persentase
+karir -> karier 
+hirarki -> hierarki
+hirarkhis -> hierarkis
+otentik -> autentik
+otopsi -> autopsi
+otodidak -> autodidak
+orisinil -> orisinal
+
+automatis -> otomatis 
+autonomi -> otonomi
+jender -> gender 
+merjer -> merger 
+jenius -> genius 
+managemen -> manajemen
+manager -> manajer
+jadual -> jadwal
+mushola -> musala 
+sholat -> salat
+shabar -> sabar
+adzan -> azan
+udzur -> uzur
+ramadhan -> Ramadan
+wudhu -> wudu
+qubur -> kubur
+qalbu -> kalbu
+maghrib -> magrib
+bathin -> batin
+himbauan -> imbauan
+hutang -> utang
+subsidair -> subsider
+ijin -> izin
+ijasah -> ijazah
+jaman -> zaman
+azas -> asas
+antri -> antre
+bis -> bus
+konkrit -> konkret
+resiko -> risiko
+sekedar -> sekadar
+saksama -> seksama
+nasehat -> nasihat
+kuatir -> khawatir
+kharisma -> karisma
+hatur -> atur
+hembus -> embus
+mantab -> mantap
+ojeg -> ojek
+rembug -> rembug
+ajeg -> ajek
+kontek -> konteks
+komplek -> kompleks
+personil -> personel
+presidensiil -> presidensial
+materiil -> materiel
+spirituil -> spiritual
+amandemen -> amendemen
+ketrampilan -> keterampilan
+samudera -> samudra
+konplik -> konflik
+brangkas -> brankas
+sarekat -> serikat
+syarekat -> syarikat
+
+
+
+
+
+[PMPKT01] => Prefiks {meN-} pada Konsonan Tajam => Prefiks {meN-} luluh jika ditambahkan pada kata dasar yang berawalan huruf (k, p, t, s)
+mengkoordinasikan -> mengoordinasikan
+mengkoordinir -> mengoordinasikan
+mengkonsumsi -> mengonsumsi
+mengkarungi -> mengarungi
+mengkontraskan -> mengontraskan
+mengkategorikan -> mengategorikan
+mengkaitkan -> mengaitkan
+mempetakan -> memetakan
+mempolakan -> memolakan
+mempesona -> memesona
+mempedulikan -> memedulikan
+mempengaruhi -> memengaruhi
+mentargetkan -> menargetkan
+mentoleransi -> menoleransi
+mentolerir -> menoleransi
+mentasbihkan -> menasbihkan
+mentaati -> menaati
+mentakdirkan -> menakdirkan
+menterapi -> menerapi
+mensucikan -> menyucikan
+mensukseskan -> menyukseskan
+mensakralkan -> menyakralkan
+
+
+
+[PMPGK01] => Prefiks {meN-} pada Gugus Konsonan => Prefiks {meN-} tidak luluh jika ditambahkan pada kata dasar yang berawalan gugus konsonan (seperti: pr, st, ks, tr, dll.)
+memroses -> memproses
+memrogram -> memprogram
+menransfer -> mentransfer
+mengritik -> mengkritik
+
+
+[KDBHC01] => Kata Dasar Berawalan Huruf C => Prefiks {meN-} berubah menjadi {men-}, bukan {meny-}, ketika ditambahkan pada kata dasar yang berawalan huruf c
+menyuci -> mencuci
+menyairkan -> mencairkan
+menyalonkan -> mencalonkan
+
+
+[KDSSK01] => Kata Dasar Satu Suku Kata => Prefiks {meN-} berubah menjadi {menge-}, bukan {mem-/men-}, ketika ditambahkan pada kata dasar yang terdiri atas satu suku kata
+membom -> mengebom
+mentes -> mengetes
+mempel -> mengepel
+mentik -> mengetik
+melem -> mengelem
+
+
+
+[GIPN01] => Gabungan Imbuhan Pembentuk Nomina {ke--an} => Gabungan imbuhan pembentuk nomina adalah {ke--an}, bukan {ke--kan}
+kemasukkan -> kemasukan
+kekompakkan -> kekompakan
+kedudukkan -> kedudukan
+kerasukkan -> kerasukan
+
+
+[GIPN02] => Gabungan Imbuhan Pembentuk Nomina {pe(N)--an} => Gabungan imbuhan pembentuk nomina adalah {pe(N)--an}, bukan {pe(N)--kan}
+penunjukkan -> penunjukan
+pemasukkan -> pemasukan
+penaklukkan -> penaklukkan
+pertunjukkan -> pertunjukan
+penampakkan -> penampakan
+perusahan -> perusahaan
+
+
+[GIPKK01] => Gabungan Imbuhan Pembentuk Kata Kerja {di--kan} => Gabungan imbuhan pembentuk kata kerja adalah {di--kan}, bukan {di--an}
+dimasukan -> dimasukkan
+dikontrakan -> dikontrakkan
+ditunjukan -> ditunjukkan
+didudukan -> didudukkan
+dikelompokan -> dikelompokkan
+dibandingan -> dibandingkan
+dibentrokan -> dibentrokkan
+ditabrakan -> ditabrakkan
+
+
+[GIPKK01] => Gabungan Imbuhan Pembentuk Kata Kerja {meN--kan} => Gabungan imbuhan pembentuk kata kerja adalah {meN--kan}, bukan {meN--an}
+menampakan -> menampakkan
+menaklukan -> menaklukkan
+meletakan -> meletakkan
+mengelompokan -> mengelompokkan
+menunjukan -> menunjukkan
+mendudukan -> mendudukkan
+membentrokan -> membentrokkan
+menabrakan -> menabrakkan
+
+[IKBHN] => Imbuhan {-nya} pada Kata Berakhiran Huruf n => Imbuhan {-nya} tidak berubah menjadi {-ya} ketika ditambahkan pada kata yang berakhiran huruf n
+dipimpinya -> dipimpinnya
+kedudukanya -> kedudukannya
+perusahaanya -> perusahaannya
+
+
+
+[PSDH] => Penulisan Singkatan yang Terdiri Atas 2 Huruf => Singkatan yang terdiri atas dua huruf ditulis dengan menggunakan tanda titik pada setiap huruf
+d/a -> d.a.
+u/b -> u.b.
+u/p -> u.p.
+a/n -> a.n.
+s/d -> s.d.
+
+[PSTH] => Penulisan Singkatan yang Terdiri Atas 3 Huruf => Singkatan yang terdiri atas tiga huruf ditulis dengan menggunakan satu tanda titik di akhir singkatan
+dsb -> dsb.
+dst -> dst.
+dll -> dll.
+dkk -> dkk.
+yth -> yth.
+ttd -> ttd.
+sbb -> sbb.
+
+[PGK001] => Penulisan Gabungan Kata => Gabungan kata tanpa imbuhan ditulis terpisah
+terimakasih -> terima kasih
+kerjasama -> kerja sama
+tandatangan -> tanda tangan
+tanggungjawab -> tanggung jawab
+tindaklanjut -> tindak lanjut
+serahterima -> serah terima
+ikutserta -> ikut serta
+ujicoba -> uji coba
+dayaguna -> daya guna
+
+[PGK002] => Penulisan gabungan kata dengan imbuhan => Gabungan kata yang hanya mendapatkan awalan atau akhiran ditulis terpisah 
+berterimakasih -> berterima kasih
+bekerjasama -> bekerja sama
+penandatangan -> penanda tangan
+bertandatangan -> bertanda tangan
+tandatangani -> tanda tangani
+bertanggungjawab -> bertanggung jawab
+penanggungjawab -> penanggung jawab
+tindaklanjuti -> tindak lanjuti
+diujicoba -> diuji coba
+mengujicoba -> menguji coba
+berdayaguna -> berdaya guna
+dayagunakan -> daya gunakan

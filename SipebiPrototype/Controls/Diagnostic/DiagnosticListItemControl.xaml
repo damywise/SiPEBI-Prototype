@@ -1,0 +1,159 @@
+﻿<UserControl x:Class="SipebiPrototype.DiagnosticListItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SipebiPrototype"
+             xmlns:core="clr-namespace:SipebiPrototype.Core;assembly=SipebiPrototype.Core"
+             mc:Ignorable="d" 
+             d:DesignWidth="850">  
+  <UserControl.Resources>
+    <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ContentControl}">
+            <Border x:Name="background"
+                    Background="{StaticResource BackgroundSoftAliceRedBrush}"
+                    MinHeight="22"
+                    >
+              <Grid x:Name="container" Background="Transparent">
+                <Grid.ColumnDefinitions>
+                  <!--Diagnostic No-->
+                  <ColumnDefinition Width="4*" MaxWidth="40"/>
+                  <!--Paragraph No -->
+                  <ColumnDefinition Width="4*" MaxWidth="40"/>
+                  <!--Element No -->
+                  <ColumnDefinition Width="3*" MaxWidth="30"/>
+                  <!-- Error Code -->
+                  <ColumnDefinition Width="7*" MaxWidth="100"/>
+                  <!-- Error Name -->
+                  <ColumnDefinition Width="15*" MaxWidth="240"/>
+                  <!-- Original Element -->
+                  <ColumnDefinition Width="12*" MaxWidth="140"/>
+                  <!-- Corrected Element -->
+                  <ColumnDefinition Width="12*" MaxWidth="140"/>
+                  <!-- Error Explanation -->
+                  <ColumnDefinition Width="24*"/>
+                  <!-- Navigation Icon -->
+                  <ColumnDefinition Width="4*" MaxWidth="40"/>
+                </Grid.ColumnDefinitions>
+
+               <!--Diagnostic No-->
+                <Border Grid.Column="0"
+                        Grid.ColumnSpan="9"
+                        Visibility="{Binding IsHeader, Converter={local:GoodBooleanToVisibilityConverter}}"
+                        BorderThickness="0 0 0 0"                    
+                        Background="{StaticResource BackgroundRedBrush}"
+                        BorderBrush="{StaticResource ForegroundGoldBrush}"                    
+                        />
+                <TextBlock Grid.Column="0"
+                           HorizontalAlignment="Center"
+                           Text="{Binding DiagnosticNo}"
+                           Style="{StaticResource AnalysisText}"
+                           />
+
+                <!--Paragraph No -->
+                <TextBlock Grid.Column="1"
+                           HorizontalAlignment="Center"
+                           Text="{Binding ParagraphNo}"
+                           Style="{StaticResource AnalysisText}"
+                           />
+
+                <!--Element No -->
+                <TextBlock Grid.Column="2"
+                           HorizontalAlignment="Center"
+                           Text="{Binding ElementNo}"
+                           Style="{StaticResource AnalysisText}"
+                           />
+
+                <!-- Error Code -->
+                <TextBlock Grid.Column="3"
+                           Text="{Binding ErrorCode}"
+                           Style="{StaticResource AnalysisText}"
+                           />
+
+                <!-- Error Name -->
+                <TextBlock Grid.Column="4"
+                           Text="{Binding Error}"
+                           Style="{StaticResource AnalysisText}"
+                           />
+
+                <!-- Original Element -->
+                <TextBlock Grid.Column="5"
+                           Text="{Binding OriginalElement}"
+                           Style="{StaticResource AnalysisText}"
+                           />
+
+                <!-- Corrected Element -->
+                <TextBlock Grid.Column="6"
+                           Text="{Binding CorrectedElement}"
+                           Style="{StaticResource AnalysisText}"
+                           />
+
+                <!-- Error Explanation -->
+                <TextBlock Grid.Column="7"
+                           Text="{Binding ErrorExplanation}"
+                           Style="{StaticResource AnalysisText}"
+                           />
+                
+                <!-- Navigation Title -->
+                <TextBlock Grid.Column="8"
+                           Text="Opsi"
+                           Style="{StaticResource AnalysisText}"
+                           Visibility="{Binding IsHeader, Converter={local:GoodBooleanToVisibilityConverter}, ConverterParameter=collapsed}"
+                           />
+
+                <!-- Navigation Icon -->
+                <Button Grid.Column="8"
+                        Style="{StaticResource ItemActionButton}"
+                        Background="{StaticResource WordRedBrush}"
+                        Command="{Binding NavigateCommand}"
+                        Visibility="{Binding IsHeader, Converter={local:GoodBooleanToVisibilityConverter}, ConverterParameter=inverse-collapsed}"
+                        Height="18"
+                        Width="20"
+                        Margin="5 0"
+                        HorizontalAlignment="Left"
+                        ToolTip="Navigasikan menuju kesalahan ini"
+                        Content="{StaticResource FontAwesomeMapMarkerIcon}">
+                </Button>
+              </Grid>
+            </Border>
+
+            <!-- Hover effect -->
+            <ControlTemplate.Triggers>
+              <!--<DataTrigger Binding="{Binding IsSelected}" Value="True">
+                <Setter Property="Background" TargetName="background" Value="{StaticResource BackgroundSoftAliceRedBrush}"/>
+              </DataTrigger>-->
+              <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                  <Storyboard>
+                    <ColorAnimation To="{StaticResource ColorQuarterTransparentGold}" Duration="0:0:0.3" Storyboard.TargetName="container" Storyboard.TargetProperty="Background.Color"/>
+                  </Storyboard>
+                </BeginStoryboard>
+              </EventTrigger>
+              <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                  <Storyboard>
+                    <ColorAnimation To="Transparent" Duration="0:0:0.3" Storyboard.TargetName="container" Storyboard.TargetProperty="Background.Color"/>
+                  </Storyboard>
+                </BeginStoryboard>
+              </EventTrigger>
+              <!--<Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" TargetName="container" Value="{StaticResource BackgroundDarkBrush}"/>
+              </Trigger>-->
+            </ControlTemplate.Triggers>
+
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+  <ContentControl     
+    VerticalContentAlignment="Stretch"
+    HorizontalContentAlignment="Stretch"
+    d:DataContext="{x:Static core:DiagnosticListItemDesignModel.Instance}"    
+    Style="{StaticResource ContentStyle}"
+    />
+</UserControl>
+
+

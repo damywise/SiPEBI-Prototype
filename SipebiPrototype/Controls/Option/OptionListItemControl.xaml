@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="SipebiPrototype.OptionListItemControl"             
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SipebiPrototype"
+             xmlns:core="clr-namespace:SipebiPrototype.Core;assembly=SipebiPrototype.Core"
+             mc:Ignorable="d" 
+             d:DesignWidth="100">
+  <UserControl.Resources>
+    <Style x:Key="ContentStyle" TargetType="{x:Type ContentControl}">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type ContentControl}">
+            <Border x:Name="background"
+                    BorderThickness="0 0 0 2"                    
+                    Background="{StaticResource BackgroundKbbiBlueBrush}"
+                    BorderBrush="{StaticResource ForegroundGoldBrush}"                    
+                    >
+                <Grid x:Name="container" Background="Transparent">
+                  <Grid.ColumnDefinitions>
+                    <!--Chosen Indicator and Icon Bar-->
+                    <ColumnDefinition Width="Auto"/>
+                    <!--Main Content-->
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource InvisibleMenuButton}"
+                        ToolTip="{Binding OptionToolTip}"
+                        Panel.ZIndex="2"
+                        Grid.ColumnSpan="2"
+                        BorderThickness="0"
+                        Foreground="Transparent"
+                        Background="Transparent"
+                        Command="{Binding OptionCommand}">
+                </Button>
+
+                <!--Chosen Indicator and Icon Bar-->
+                  <Border Grid.Column="0"
+                  Background="{StaticResource BackgroundGoldBrush}"
+                        Width="5" 
+                        HorizontalAlignment="Left"                      
+                        Visibility="{Binding IsChosen, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=True}"
+                        />
+
+                  <!--Main Content-->
+                  <StackPanel 
+                    Width="100"
+                    Grid.Column="1"
+                    Orientation="Vertical">
+                  <!--Icon "{Binding OptionIcon}"-->
+                    <TextBlock Foreground="{StaticResource ForegroundGoldBrush}"
+                      Padding="5 10 5 5" 
+                      FontSize="{StaticResource FontSizeXXXLarge}"
+                      FontFamily="{StaticResource FontAwesome}"
+                      Text="{Binding OptionIcon}"
+                      HorizontalAlignment="Center"
+                    />
+
+                    <!--Text-->
+                    <TextBlock 
+                      Text="{Binding OptionText}" 
+                      Padding="10 0 10 5"
+                      Foreground="{StaticResource WordGoldBrush}"
+                      TextTrimming="None"
+                      FontSize="{StaticResource FontSizeSmall}"
+                      FontFamily="{StaticResource LatoRegular}"                    
+                      HorizontalAlignment="Center"
+                      />
+                  </StackPanel>
+
+                  <Border 
+                        Width="100"
+                        Grid.Column="1"
+                        Background="{StaticResource BackgroundQuarterSemiTransparentGoldBrush}"
+                        Visibility="{Binding IsChosen, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=True}"
+                        >
+                  </Border>
+                </Grid>
+              <!--</Button>-->
+            </Border>
+
+            <!-- Hover effect -->
+            <ControlTemplate.Triggers>
+              <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                <Setter Property="Background" TargetName="background" Value="{StaticResource BackgroundBlueBrush}"/>
+              </DataTrigger>
+              <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                  <Storyboard>
+                    <ColorAnimation To="{StaticResource ColorQuarterSemiTransparentGold}" Duration="0:0:0.3" Storyboard.TargetName="container" Storyboard.TargetProperty="Background.Color"/>
+                  </Storyboard>
+                </BeginStoryboard>
+              </EventTrigger>
+              <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                  <Storyboard>
+                    <ColorAnimation To="Transparent" Duration="0:0:0.3" Storyboard.TargetName="container" Storyboard.TargetProperty="Background.Color"/>
+                  </Storyboard>
+                </BeginStoryboard>
+              </EventTrigger>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" TargetName="container" Value="{StaticResource BackgroundDarkBrush}"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Resources>
+  <ContentControl     
+    d:DataContext="{x:Static core:OptionListItemDesignModel.Instance}"
+    Style="{StaticResource ContentStyle}"
+    />
+  
+  <!-- mc:Ignorable="d" ignore everything that starts with d: in the run time!-->
+  <!-- note that now we put d: in front of DataContext so that in this design view, 
+  we see how it will look like, but in the actual application (run time), we won't see that-->
+</UserControl>
+
+
+<!-- Profile picture-->
+<!--
+                <Border Grid.Column="0" 
+                        Padding="8 15"
+                        >
+                  -->
+<!-- Profile picture background -->
+<!--
+                  <Border Background="{Binding ProfilePictureRGB, Converter={local:StringRGBToBrushConverter}}"
+                          Height="40"
+                          Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                          CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+                    -->
+<!-- Profile picture initials-->
+<!-- , FallbackValue=LM. We don't use this because, if anything happen to the app, the user will see this value in the live app-->
+<!--
+                    <TextBlock Text="{Binding Initials}"
+                             VerticalAlignment="Center"
+                             HorizontalAlignment="Center"
+                             Foreground="{StaticResource ForegroundLightBrush}"
+                             FontSize="{StaticResource FontSizeLarge}"
+                             FontFamily="{StaticResource LatoRegular}"
+                             />
+                  </Border>
+                </Border>-->
+
