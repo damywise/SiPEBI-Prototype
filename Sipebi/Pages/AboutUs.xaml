@@ -1,0 +1,160 @@
+﻿<local:BasePage 
+  x:TypeArguments="core:AboutUsViewModel"
+  x:Class="Sipebi.AboutUsPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:local="clr-namespace:Sipebi"
+  xmlns:core="clr-namespace:Sipebi.Core;assembly=Sipebi.Core"
+  x:Name="Page"
+  mc:Ignorable="d" 
+  d:DesignHeight="600" d:DesignWidth="900"
+  >
+  <Border Background="{StaticResource BackgroundMainSoftYellowBrush}"
+          >
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="1*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <ScrollViewer VerticalScrollBarVisibility="Auto"
+                    Padding="0 0 0 15">
+        <StackPanel Orientation="Vertical"
+                    Margin="15">
+          <StackPanel.Background>
+            <ImageBrush Opacity="0.1" ImageSource="/Images/Logo/logo.png" Stretch="Uniform"/>
+          </StackPanel.Background>
+          <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+            <Image Source="/Images/Logo/icon_raw.png" Stretch="Uniform" Width="100" Height="35" Margin="5 0 0 0"/>
+            <TextBlock FontFamily="{StaticResource LatoRegular}"
+                 FontSize="{StaticResource FontSizeXXLarge}"
+                 Foreground="{StaticResource WordKbbiBlueBrush}"
+                 TextWrapping="Wrap"
+                 Text="Aplikasi Penyuntingan Ejaan Bahasa Indonesia"
+                 TextAlignment="Left"
+                 Margin="10 5 10 5"
+                 />
+          </StackPanel>
+          <TextBlock FontFamily="{StaticResource LatoRegular}"
+                 FontSize="{StaticResource FontSizeLarge}"
+                 TextWrapping="Wrap"
+                 TextAlignment="Justify"
+                 Margin="0 0 10 0"
+                 >
+            <Run Text="Merupakan aplikasi yang berfungsi untuk melakukan perbaikan/penyuntingan teks bahasa Indonesia secara otomatis. Aplikasi ini menggunakan pangkalan data KBBI termutakhir (keluaran"></Run>
+            <Run Text="{Binding Source={x:Static core:PH.KBBIVersion}, Mode=OneWay}"/><Run Text=") dan masukan para ahli bahasa sebagai basis datanya."/>
+          </TextBlock>
+          <!--Aplikasi ini juga dilengkapi dengan kapasitas kustomisasi bagi pengguna untuk menambahkan jenis kesalahan dan daftar pembenahan kata takbaku.-->
+          <TextBlock FontFamily="{StaticResource LatoRegular}"
+                 FontSize="{StaticResource FontSizeLarge}"
+                 TextWrapping="Wrap"
+                 Text="Badan Bahasa berkomitmen untuk senantiasa mengembangkan dan memutakhirkan SiPEBI agar makin banyak jenis kesalahan penulisan teks dalam bahasa Indonesia yang dapat diperbaiki secara otomatis oleh SiPEBI."
+                 TextAlignment="Justify"
+                 Margin="0 10 10 0"
+                 />
+          <!--<TextBlock FontFamily="{StaticResource LatoBold}"                                    
+                                   FontSize="{StaticResource FontSizeLarge}" 
+                                   TextAlignment="Center">
+                          <Run Text="S" Foreground="{StaticResource WordGoldBrush}"/><Run Text="i" Foreground="{StaticResource WordGoldBrush}"/><Run Text="P" Foreground="{StaticResource WordGoldBrush}"/><Run Text="E" Foreground="{StaticResource WordGoldBrush}"/><Run Text="B" Foreground="{StaticResource WordGoldBrush}"/><Run Text="I" Foreground="{StaticResource WordGoldBrush}"/>
+          </TextBlock>-->
+          <TextBlock FontFamily="{StaticResource LatoRegular}"
+                 FontSize="{StaticResource FontSizeLarge}"
+                 TextWrapping="Wrap"
+                 TextAlignment="Justify"
+                 Margin="0 10 10 0"
+                 >
+            <Run Text="Daftar jenis kesalahan yang dapat dideteksi oleh versi SiPEBI ini ("></Run><Run Text="{Binding Source={x:Static core:PH.SoftwareVersion}, Mode=OneWay}"></Run><Run Text=") adalah sebagai berikut:"></Run>
+          </TextBlock>
+          <TextBlock Name="TextBlockListOfErrors" FontFamily="{StaticResource LatoRegular}"
+                 FontSize="{StaticResource FontSizeLarge}"
+                 TextWrapping="Wrap"
+                 Text=""
+                 TextAlignment="Justify"
+                 Margin="0 10 10 0"
+                 />
+          <TextBlock FontFamily="{StaticResource LatoBold}"
+                 FontSize="{StaticResource FontSizeXLarge}"
+                 Foreground="{StaticResource WordKbbiBlueBrush}"
+                 TextWrapping="Wrap"
+                 Margin="0 40 10 10"
+                 >
+            <Run Text="Kementerian Pendidikan dan Kebudayaan Republik Indonesia"></Run>
+            <Run Text="{Binding Source={x:Static core:PH.CopyrightSymbol}, Mode=OneWay}"/>
+          </TextBlock>
+        </StackPanel>
+      </ScrollViewer>
+
+      <Border Grid.Row="2"
+              BorderBrush="{StaticResource ForegroundGoldenrodBrush}"
+              BorderThickness="0 1 0 0"
+              Padding="15 5 15 15"
+              >
+        <Grid>
+          <Grid.Background>
+            <ImageBrush ImageSource="/Images/Logo/icon_raw.png" Stretch="Uniform" Opacity="0.1"/>
+          </Grid.Background>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+          </Grid.RowDefinitions>
+          <TextBlock FontSize="{StaticResource FontSizeXLarge}"                   
+                     Foreground="DarkGreen"
+                     TextWrapping="Wrap"
+                     Text="Pengembang"
+                     TextAlignment="Justify"
+                     FontFamily="{StaticResource LatoRegular}"
+                     />
+          <TextBlock Grid.Column="1" 
+                     FontSize="{StaticResource FontSizeXLarge}"
+                     Foreground="DarkGreen"
+                     TextWrapping="Wrap"
+                     Text=": "
+                     TextAlignment="Justify"                 
+                     FontFamily="{StaticResource LatoRegular}"
+                     />
+          <TextBlock Grid.Column="2" 
+                     FontSize="{StaticResource FontSizeXLarge}"
+                     Foreground="DarkGreen"
+                     TextWrapping="Wrap"
+                     Text="Ian K"
+                     TextAlignment="Justify"                 
+                     FontFamily="{StaticResource LatoRegular}"
+                     />
+          <TextBlock Grid.Row="1"                   
+                     FontSize="{StaticResource FontSizeXLarge}"
+                     Foreground="DarkGreen"
+                     TextWrapping="Wrap"
+                     Text="Versi"
+                     TextAlignment="Justify"                 
+                     FontFamily="{StaticResource LatoRegular}"
+                     />
+          <TextBlock Grid.Row="1" Grid.Column="1"                    
+                     FontSize="{StaticResource FontSizeXLarge}"
+                     Foreground="DarkGreen"
+                     TextWrapping="Wrap"
+                     Text=": "
+                     TextAlignment="Justify"                 
+                     FontFamily="{StaticResource LatoRegular}"
+                     />
+          <TextBlock Grid.Row="1" Grid.Column="2"                    
+                     FontSize="{StaticResource FontSizeXLarge}"
+                     Foreground="DarkGreen"
+                     TextWrapping="Wrap"
+                     TextAlignment="Justify"                 
+                     FontFamily="{StaticResource LatoRegular}"
+                     >
+            <Run Text="{Binding Source={x:Static core:PH.SoftwareVersion}, Mode=OneWay}"></Run>
+            <Run Text="-"></Run>
+            <Run Text="{Binding Source={x:Static core:PH.SipebiBuildDate}, Mode=OneWay}"></Run>
+          </TextBlock>
+        </Grid>
+      </Border>
+    </Grid>
+  </Border>
+</local:BasePage>

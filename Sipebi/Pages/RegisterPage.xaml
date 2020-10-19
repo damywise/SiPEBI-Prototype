@@ -1,0 +1,74 @@
+﻿<local:BasePage 
+  x:TypeArguments="core:RegisterViewModel"
+  x:Class="Sipebi.RegisterPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:local="clr-namespace:Sipebi"
+  xmlns:core="clr-namespace:Sipebi.Core;assembly=Sipebi.Core"
+  x:Name="Page"
+  mc:Ignorable="d" 
+  d:DesignHeight="600" d:DesignWidth="800"
+  >
+  <Border>
+    <Grid>
+
+      <!-- Main content scroll-->
+      <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                    TextBlock.TextAlignment="Center">
+          <!-- Login main content white box-->
+          <Border Background="{StaticResource BackgroundKbbiBlueBrush}" 
+                  CornerRadius="20" Padding="15 50 15 15"
+                  BorderBrush="{StaticResource ForegroundGoldenrodBrush}"
+                  BorderThickness="3"
+                  Width="360"
+                  Margin="35">
+            <StackPanel>
+              <!-- Sign Up header-->
+              <TextBlock Text="Halaman Daftar" 
+                     FontSize="{StaticResource FontSizeXXLarge}" 
+                     FontFamily="{StaticResource LatoRegular}"
+                     Foreground="{StaticResource WordLightBlueBrush}"/>
+
+              <!-- Sign Up sub-text-->
+              <TextBlock Text="Silakan Mendaftar pada SiPEBI!"
+                         FontSize="{StaticResource FontSizeLarge}"
+                         Foreground="{StaticResource ForegroundDarkBrush}"
+                         Margin="0 0 0 20"
+                         />
+
+              <!-- Email-->
+              <TextBox Text="{Binding Email}" 
+                       local:IsFocusedProperty.Value="True"
+                       Tag="Pos-el"/>
+
+              <!-- Password-->
+              <!-- This is going to be very winded, so we have to use "AttachedProperty" primarily to avoid breaking MVVM-->
+              <!-- we don't want to go back to window form's style of event handling-->
+              <!-- This is the only time we want to use "AttachedProperty", because otherwise it will break MVVM-->
+              <!-- In short/summary, THE ONLY TIME WE WANT TO USE "ATTACHEDPROPERTY" IS WHEN WE WANT TO ENHANCE UI FUNCTIONALITY!-->
+              <!-- this can theoretically be done <PasswordBox local:PasswordBoxProperties.MonitorPassword="True" Tag="Password" Margin="0 0 0 30"/>-->
+              <!-- But we want to do it in style instead of here-->
+              <PasswordBox x:Name="PasswordText" Tag="Kata Sandi" Margin="0 0 0 30"/>
+
+              <!-- Register button-->
+              <Button Content="Daftar" 
+                      IsDefault="True"
+                      local:IsBusyProperty.Value="{Binding RegisterIsRunning}"
+                      Command="{Binding RegisterCommand}"
+                      CommandParameter="{Binding ElementName=Page}" 
+                      HorizontalAlignment="Center"/>
+              <Button Style="{StaticResource TextButton}"
+                Content="Saya sudah memiliki akun"
+                HorizontalAlignment="Center"
+                Command="{Binding LoginCommand}"/>
+            </StackPanel>
+          </Border>
+
+        </StackPanel>
+      </ScrollViewer>
+    </Grid>
+  </Border>
+</local:BasePage>

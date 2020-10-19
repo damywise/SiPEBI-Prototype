@@ -1,2 +1,3 @@
 ﻿# .gitignore
 .vs/
+App_Data/

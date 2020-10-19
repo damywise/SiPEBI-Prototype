@@ -1,0 +1,101 @@
+﻿<local:BasePage 
+  x:TypeArguments="core:FormalWordViewModel"
+  x:Class="Sipebi.FormalWordPage"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:local="clr-namespace:Sipebi"
+  xmlns:core="clr-namespace:Sipebi.Core;assembly=Sipebi.Core"
+  x:Name="Page"
+  mc:Ignorable="d" 
+  d:DesignHeight="450" d:DesignWidth="900"
+  >
+  <UserControl.Template>
+    <ControlTemplate TargetType="UserControl">
+      <Border Background="{StaticResource BackgroundMainSoftYellowBrush}">
+        <Grid x:Name="MainGrid">
+          <Grid.ColumnDefinitions>
+            <!-- Informal Word -->
+            <ColumnDefinition Width="1*"/>
+
+            <!-- Formal Word -->
+            <ColumnDefinition Width="1*"/>
+
+            <!-- Options -->
+            <ColumnDefinition Width="140"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <!-- Possibly, filter option -->
+            <RowDefinition Height="0"/>
+
+            <!-- Header -->
+            <RowDefinition Height="40"/>
+
+            <!-- Content -->
+            <RowDefinition Height="Auto"/>
+
+            <!-- Footer -->
+            <RowDefinition Height="40"/>
+          </Grid.RowDefinitions>
+
+          <Border Grid.Row="1"
+              Background="{StaticResource BackgroundBlueBrush}">
+            <TextBlock Text="Kata Takbaku"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontFamily="{StaticResource LatoRegular}"
+                   Foreground="{StaticResource ForegroundLightBrush}"
+                   FontSize="{StaticResource FontSizeXLarge}"
+                   />
+          </Border>
+
+          <Border Grid.Column="1" Grid.Row="1"
+              Background="{StaticResource BackgroundGreenBrush}">
+            <TextBlock Text="Kata Baku"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontFamily="{StaticResource LatoRegular}"
+                   Foreground="{StaticResource ForegroundLightBrush}"
+                   FontSize="{StaticResource FontSizeXLarge}"
+                   />
+          </Border>
+
+          <Border Grid.Column="2" Grid.Row="1"
+              Background="{StaticResource BackgroundRedBrush}">
+            <TextBlock Text="Opsi"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontFamily="{StaticResource LatoRegular}"
+                   Foreground="{StaticResource ForegroundLightBrush}"
+                   FontSize="{StaticResource FontSizeXLarge}"
+                   />
+          </Border>
+
+          <!-- Put the content here!-->
+          <!-- The user content MaxHeight="{Binding MaxContentHeight}"-->
+          <local:FormalWordListControl 
+            d:DataContext="{Binding Source={x:Static core:FormalWordListDesignModel.DesignInstance}}"
+            MaxHeight="{Binding ElementName=MainGrid, Path=ActualHeight, 
+                    Converter={local:MaxHeightConverter}, ConverterParameter=81}"
+            Grid.Row="2" Grid.ColumnSpan="3"
+            Background="{StaticResource BackgroundGoldBrush}"/>
+
+          <!-- local:CornerRadiusProperty.Value="0 0 10 10"-->
+          <Border Grid.ColumnSpan="3" Grid.Row="3"
+              Background="{StaticResource BackgroundOrangeBrush}">
+            <Button Grid.Row="2" 
+                    Margin="0"                       
+                    local:IsBusyProperty.Value="{Binding AddingIsRunning}"
+                    FontSize="{StaticResource FontSizeXLarge}"
+                    FontFamily="{StaticResource FontAwesome}"
+                    Style="{StaticResource AdjustableButton}"
+                    Content="{StaticResource FontAwesomeCreateWordWithIcon}"
+                    Grid.ColumnSpan="2"
+                    Command="{Binding AddCommand}"/>
+          </Border>
+        </Grid>
+      </Border>
+    </ControlTemplate>
+  </UserControl.Template>
+</local:BasePage>

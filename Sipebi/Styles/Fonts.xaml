@@ -1,0 +1,83 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Sipebi"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+  <FontFamily x:Key="LatoRegular">pack://application;,,,/Fonts/#Lato Regular</FontFamily>
+  <FontFamily x:Key="LatoThin">pack://application;,,,/Fonts/#Lato Thin</FontFamily>
+  <FontFamily x:Key="LatoBold">pack://application;,,,/Fonts/#Lato Bold</FontFamily>
+  <FontFamily x:Key="FontAwesome">pack://application;,,,/Fonts/#FontAwesome</FontFamily>
+
+  <!-- This is to set default font globally-->
+  <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
+    <Setter Property="FontFamily" Value="{StaticResource LatoThin}"></Setter>
+    <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"></Setter>
+  </Style>
+  <!-- We make specific style for the TextBlock, because TextBlock is not derived from Control-->
+  <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
+    <Setter Property="FontFamily" Value="{StaticResource LatoThin}"></Setter>
+    <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"></Setter>
+  </Style>
+  
+  <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}"></Style>
+  <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseStyle}"></Style>
+  <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}"></Style>
+  <!--<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseStyle}"></Style> TextBlock won't be able to inherit from BaseStyle since it does not derive from Control class-->
+  <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}"></Style>
+  <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}"></Style>
+
+  <system:Double x:Key="FontSizeXXSmall">6</system:Double>
+  <system:Double x:Key="FontSizeXSmall">8</system:Double>
+  <system:Double x:Key="FontSizeSmaller">10</system:Double>
+  <system:Double x:Key="FontSizeSmall">12</system:Double>
+  <system:Double x:Key="FontSizeRegular">14</system:Double>
+  <system:Double x:Key="FontSizeSlightlyLarge">16</system:Double>
+  <system:Double x:Key="FontSizeLarge">20</system:Double>
+  <system:Double x:Key="FontSizeXLarge">24</system:Double>
+  <system:Double x:Key="FontSizeXXLarge">30</system:Double>
+  <system:Double x:Key="FontSizeXXXLarge">40</system:Double>
+
+  <system:Double x:Key="FontSizeFormalWordKbbi">14</system:Double>
+
+  <system:String x:Key="FontAwesomeChatIcon">&#xf086;</system:String>
+  <system:String x:Key="FontAwesomeUserIcon">&#xf007;</system:String>
+  <system:String x:Key="FontAwesomePictureIcon">&#xf1c5;</system:String>
+  <system:String x:Key="FontAwesomeCogIcon">&#xf013;</system:String>
+  <system:String x:Key="FontAwesomeSearchIcon">&#xf002;</system:String>
+  <system:String x:Key="FontAwesomeEllipsisVerticalIcon">&#xf142;</system:String>
+  <system:String x:Key="FontAwesomePaperclipIcon">&#xf0C6;</system:String>
+  <system:String x:Key="FontAwesomeEmojiIcon">&#xf118;</system:String>
+  <system:String x:Key="FontAwesomeBackToCloseIcon">&#xf0d9;</system:String>
+  <system:String x:Key="FontAwesomeForwardToOpenIcon">&#xf0da;</system:String>
+  <system:String x:Key="FontAwesomeFileIcon">&#xf016;</system:String>
+  <system:String x:Key="FontAwesomeBookIcon">&#xf02d;</system:String>
+  <system:String x:Key="FontAwesomeAboutUsIcon">&#xf05a;</system:String>
+
+  <system:String x:Key="FontAwesomeCreateIcon">&#xf067;</system:String>
+  <system:String x:Key="FontAwesomeEditIcon">&#xf044;</system:String>
+  <system:String x:Key="FontAwesomeDeleteIcon">&#xf00d;</system:String>
+  <system:String x:Key="FontAwesomeDisableIcon">&#xf05e;</system:String>
+  <system:String x:Key="FontAwesomeDetailsIcon">&#xf129;</system:String>
+  <system:String x:Key="FontAwesomeListIcon">&#xf03a;</system:String>
+  <system:String x:Key="FontAwesomeFilterIcon">&#xf0b0;</system:String>
+  <system:String x:Key="FontAwesomeMapMarkerIcon">&#xf041;</system:String> <!-- Used later for text navigation -->
+
+  <system:String x:Key="FontAwesomeCreateWordWithIcon">&#xf067; Tambahkan</system:String>
+  <system:String x:Key="FontAwesomeLoadWordWithIcon">&#xf07c; Muat</system:String>
+  <system:String x:Key="FontAwesomeCorrectWordWithIcon">&#xf040; Perbaiki</system:String>
+  <system:String x:Key="FontAwesomeSaveWordWithIcon">&#xf0c7; Simpan</system:String>
+  <system:String x:Key="FontAwesomeOpenReportWordWithIcon">&#xf108; Analisis</system:String>
+  <system:String x:Key="FontAwesomeCloseReportWordWithIcon">&#xf108; Tutup Analisis</system:String>
+  <system:String x:Key="FontAwesomeArchiveWordWithIcon">&#xf187; Rekam Analisis</system:String>
+  <!--<system:String x:Key="FontAwesomeReportWordWithIcon">&#xf188; Hasil Analisis</system:String>-->
+
+  <system:String x:Key="FontAwesomeMinimizeIcon">&#xf2d1;</system:String>
+  <system:String x:Key="FontAwesomeMaximizeIcon">&#xf2d0;</system:String>
+  <system:String x:Key="FontAwesomeCloseIcon">&#xf2d3;</system:String>
+
+  <system:String x:Key="FontAwesomeOriginalWordWithIcon">&#xf1ea; Teks Asli</system:String>
+  <system:String x:Key="FontAwesomeCorrectedWordWithIcon">&#xf046; Teks Perbaikan</system:String>
+
+  
+
+
+</ResourceDictionary>

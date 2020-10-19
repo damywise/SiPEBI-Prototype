@@ -1,0 +1,104 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Sipebi">
+  <Color x:Key="BackgroundLight">#efefef</Color>
+  <Color x:Key="BackgroundVeryLight">#fafafa</Color>
+  <Color x:Key="ForegroundMain">#686868</Color>
+  <Color x:Key="ColorDark">#bdbdbd</Color>
+  <Color x:Key="ColorFullLight">#ffffff</Color>
+  <Color x:Key="ColorFullDark">#000000</Color>
+  <Color x:Key="ColorKbbiBlue">#110063</Color>
+  <Color x:Key="ColorKbbiYellow">#fcffb7</Color>
+  <Color x:Key="ColorSoftAliceBlue">#f0fcff</Color>
+  <Color x:Key="ColorSoftAliceGreen">#f0fffc</Color>
+  <Color x:Key="ColorSoftAliceRed">#fff0f4</Color>
+  <Color x:Key="ColorSoftAliceYellow">#fffff0</Color>
+  <Color x:Key="ColorThirdQuarterTransparentSoftAliceYellow">#Bffffff0</Color>
+  <Color x:Key="ColorSemiQuarterTransparentSoftAliceYellow">#9ffffff0</Color>
+  <Color x:Key="ColorSemiTransparentSoftAliceYellow">#7ffffff0</Color>
+  <Color x:Key="ColorQuarterSemiTransparentSoftAliceYellow">#5ffffff0</Color>
+  <Color x:Key="ColorQuarterTransparentSoftAliceYellow">#3ffffff0</Color>
+  <Color x:Key="ColorGold">#FFD700</Color>
+  <Color x:Key="ColorDarkerGold">#F9CE00</Color>
+  <Color x:Key="ColorGoldenrod">#DAA520</Color>
+  <Color x:Key="ColorSemiTransparentGold">#7FFFD700</Color>
+  <Color x:Key="ColorSemiTransparentGoldenrod">#7FDAA520</Color>
+  <Color x:Key="ColorQuarterSemiTransparentGold">#5FFFD700</Color>
+  <Color x:Key="ColorQuarterSemiTransparentGoldenrod">#5FDAA520</Color>
+  <Color x:Key="ColorQuarterTransparentGold">#3FFFD700</Color>
+  <Color x:Key="ColorQuarterTransparentGoldenrod">#3FDAA520</Color>
+  <Color x:Key="ColorAliceGreen">#f0fff8</Color>
+  <Color x:Key="ColorSemiTransparentWhite">#7fffffff</Color>
+  <Color x:Key="ColorQuarterSemiTransparentWhite">#5fffffff</Color>
+  <Color x:Key="ColorQuarterTransparentWhite">#3fffffff</Color>
+  <Color x:Key="ColorThreeSixteenthTransparentWhite">#2fffffff</Color>
+  <Color x:Key="ColorOneEighthTransparentWhite">#1fffffff</Color>
+  <Color x:Key="WordBlue">#3099C5</Color>
+  <Color x:Key="WordTransparentBlue">#003099C5</Color>
+  <Color x:Key="WordLightBlue">#45B6E5</Color>
+  <Color x:Key="WordVeryLightBlue">#C3E5F3</Color>
+  <Color x:Key="WordVeryVeryLightBlue">#ECF6FB</Color>
+  <Color x:Key="WordDarkBlue">#0C6991</Color>
+  <Color x:Key="WordOrange">#FFA800</Color>
+  <Color x:Key="WordRed">#FF4747</Color>
+  <Color x:Key="WordDeeperRed">#C81010</Color>
+  <Color x:Key="WordGreen">#00C541</Color>
+  <Color x:Key="WordDeeperGreen">#20B041</Color>
+  <!--00A541 #3069C5-->
+
+  <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource ColorDark}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLight}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundVeryLightBrush" Color="{StaticResource BackgroundVeryLight}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundFullLightBrush" Color="{StaticResource ColorFullLight}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundBlueBrush" Color="{StaticResource WordBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundGreenBrush" Color="{StaticResource WordDeeperGreen}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundOrangeBrush" Color="{StaticResource WordOrange}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundRedBrush" Color="{StaticResource WordRed}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundKbbiBlueBrush" Color="{StaticResource ColorKbbiBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundKbbiYellowBrush" Color="{StaticResource ColorKbbiYellow}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundSoftAliceBlueBrush" Color="{StaticResource ColorSoftAliceBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundSoftAliceGreenBrush" Color="{StaticResource ColorSoftAliceGreen}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundSoftAliceRedBrush" Color="{StaticResource ColorSoftAliceRed}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundSoftAliceYellowBrush" Color="{StaticResource ColorSoftAliceYellow}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundMainSoftYellowBrush" Color="{StaticResource BackgroundVeryLight}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundGoldBrush" Color="{StaticResource ColorGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundDarkerGoldBrush" Color="{StaticResource ColorDarkerGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundGoldenrodBrush" Color="{StaticResource ColorGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundSemiTransparentGoldBrush" Color="{StaticResource ColorSemiTransparentGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundSemiTransparentGoldenrodBrush" Color="{StaticResource ColorSemiTransparentGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundQuarterSemiTransparentGoldBrush" Color="{StaticResource ColorQuarterSemiTransparentGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundQuarterSemiTransparentGoldenrodBrush" Color="{StaticResource ColorQuarterSemiTransparentGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundQuarterTransparentGoldBrush" Color="{StaticResource ColorQuarterTransparentGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundQuarterTransparentGoldenrodBrush" Color="{StaticResource ColorQuarterTransparentGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundAliceGreenBrush" Color="{StaticResource ColorAliceGreen}"></SolidColorBrush>
+
+  <SolidColorBrush x:Key="ForegroundMainBrush" Color="{StaticResource ForegroundMain}"></SolidColorBrush>
+  <SolidColorBrush x:Key="ForegroundVeryDarkBrush" Color="{StaticResource ColorFullDark}"></SolidColorBrush>
+  <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ColorFullLight}"></SolidColorBrush>
+  <SolidColorBrush x:Key="ForegroundGoldBrush" Color="{StaticResource ColorGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="ForegroundGoldenrodBrush" Color="{StaticResource ColorGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="ForegroundKbbiBlueBrush" Color="{StaticResource ColorKbbiBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="ForegroundDarkBrush" Color="{StaticResource ColorDark}"></SolidColorBrush>
+
+  <SolidColorBrush x:Key="WordBlueBrush" Color="{StaticResource WordBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordTransparentBlueBrush" Color="{StaticResource WordTransparentBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordLightBlueBrush" Color="{StaticResource WordLightBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordVeryLightBlueBrush" Color="{StaticResource WordVeryLightBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordVeryVeryLightBlueBrush" Color="{StaticResource WordVeryVeryLightBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordDarkBlueBrush" Color="{StaticResource WordDarkBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordOrangeBrush" Color="{StaticResource WordOrange}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordRedBrush" Color="{StaticResource WordRed}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordDeeperRedBrush" Color="{StaticResource WordDeeperRed}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordGreenBrush" Color="{StaticResource WordGreen}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordDeeperGreenBrush" Color="{StaticResource WordDeeperGreen}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordSemiTransparentGoldBrush" Color="{StaticResource ColorSemiTransparentGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordSemiTransparentGoldenrodBrush" Color="{StaticResource ColorSemiTransparentGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordQuarterSemiTransparentGoldBrush" Color="{StaticResource ColorQuarterSemiTransparentGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordQuarterSemiTransparentGoldenrodBrush" Color="{StaticResource ColorQuarterSemiTransparentGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordQuarterTransparentGoldBrush" Color="{StaticResource ColorQuarterTransparentGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordQuarterTransparentGoldenrodBrush" Color="{StaticResource ColorQuarterTransparentGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordGoldBrush" Color="{StaticResource ColorGold}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordGoldenrodBrush" Color="{StaticResource ColorGoldenrod}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordKbbiBlueBrush" Color="{StaticResource ColorKbbiBlue}"></SolidColorBrush>
+  <SolidColorBrush x:Key="WordKbbiYellowBrush" Color="{StaticResource ColorKbbiYellow}"></SolidColorBrush>
+</ResourceDictionary>
