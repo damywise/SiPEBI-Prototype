@@ -71,6 +71,7 @@
   <SolidColorBrush x:Key="BackgroundQuarterTransparentGoldBrush" Color="{StaticResource ColorQuarterTransparentGold}"></SolidColorBrush>
   <SolidColorBrush x:Key="BackgroundQuarterTransparentGoldenrodBrush" Color="{StaticResource ColorQuarterTransparentGoldenrod}"></SolidColorBrush>
   <SolidColorBrush x:Key="BackgroundAliceGreenBrush" Color="{StaticResource ColorAliceGreen}"></SolidColorBrush>
+  <SolidColorBrush x:Key="BackgroundDeeperRedBrush" Color="{StaticResource WordDeeperRed}"></SolidColorBrush>
 
   <SolidColorBrush x:Key="ForegroundMainBrush" Color="{StaticResource ForegroundMain}"></SolidColorBrush>
   <SolidColorBrush x:Key="ForegroundVeryDarkBrush" Color="{StaticResource ColorFullDark}"></SolidColorBrush>

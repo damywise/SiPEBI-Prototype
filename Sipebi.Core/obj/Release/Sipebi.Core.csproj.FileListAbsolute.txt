@@ -23,3 +23,5 @@ C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Release\Sipebi.Core.csproj.CoreC
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Release\Sipebi.Core.csproj.CopyComplete
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Release\Sipebi.Core.dll
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Release\Sipebi.Core.pdb
+C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\bin\Release\Extension.Versioning.dll
+C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\bin\Release\Extension.Versioning.pdb

@@ -195,7 +195,6 @@ C:\ASTrio\VS2017\Desktop\SipebiPrototype\Sipebi\obj\Debug\Sipebi.pdb
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Sipebi.exe.config
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Sipebi.exe
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Sipebi.pdb
-C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\EntityFramework.dll
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Extension.Database.Base.dll
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Extension.Database.Sqlite.dll
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Extension.Extractor.dll
@@ -212,7 +211,6 @@ C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\System.Data.SQLite.Linq.dll
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\System.ValueTuple.dll
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Extension.Cryptography.dll
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Sipebi.Core.pdb
-C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\EntityFramework.xml
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Extension.Database.Base.pdb
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Extension.Database.Base.xml
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi\bin\Debug\Extension.Database.Sqlite.pdb

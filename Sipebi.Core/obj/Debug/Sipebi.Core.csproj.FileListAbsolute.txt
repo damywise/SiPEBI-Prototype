@@ -74,3 +74,6 @@ C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Debug\Sipebi.Core.csproj.CoreCom
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Debug\Sipebi.Core.csproj.CopyComplete
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Debug\Sipebi.Core.dll
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Debug\Sipebi.Core.pdb
+C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\bin\Debug\Extension.Versioning.dll
+C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\bin\Debug\Extension.Versioning.pdb
+C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.Core\obj\Debug\Sipebi.Core.csprojAssemblyReference.cache

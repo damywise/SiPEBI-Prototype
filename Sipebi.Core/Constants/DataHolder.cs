@@ -187,7 +187,6 @@
     /// </summary>
     public const string DefaultBuildDateFileNameAndExtension = "BuildDate.txt";
 
-    #region Word Properties
     //Cryptographic information
     //that is, the SiPEBI AES-128 keys for User (U) and for Editor (E)
     public static readonly byte[] SipebiKU = new byte[] { 
@@ -225,6 +224,24 @@
     /// </summary>
     public const string KBBI = "KBBI";
 
+    public const bool HostTesting = false;
+    public const string AppWebTestHost = "http://localhost:7742/";
+    public const string AppWebHost = "http://kbbi.kemdikbud.go.id/";
+    public const string AppWebHostUrl = HostTesting ? AppWebTestHost : AppWebHost;
+    public const string UpdateCheckRelativeUrl = "Aplikasi/Cek?aplikasi=SiPEBI";
+    public const string GetUpdateRelativeUrl = "Aplikasi/Index#unduh-sipebi-windows";
+
+    /// <summary>
+    /// The special URL used to check if SiPEBI has an updated latest version ready to download
+    /// </summary>
+    public const string UpdateCheckUrl = AppWebHostUrl + UpdateCheckRelativeUrl;
+
+    /// <summary>
+    /// The special URL used to 
+    /// </summary>
+    public const string GetUpdateUrl = AppWebHostUrl + GetUpdateRelativeUrl;
+
+
     //This region is just list of string which are given constant names
     //This is to support ease refraction later on when needed
     //"bermakna", "berhomonim", "berhomograf","baku homograf sama","takbaku ambigu"
@@ -234,7 +251,6 @@
     public const string berhomograf = "berhomograf";
     public const string baku_homograf_sama = "baku homograf sama";
     public const string takbaku_ambigu = "takbaku ambigu";
-    #endregion Word Properties
   }
 }
 

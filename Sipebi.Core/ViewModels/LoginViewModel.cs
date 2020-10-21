@@ -1,8 +1,14 @@
-﻿using System;
+﻿using Extension.Versioning;
+using System;
+using System.IO;
+using System.Net;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Sipebi.Core {
@@ -24,10 +30,19 @@ namespace Sipebi.Core {
 		/// </summary>
 		public bool LoginIsRunning { get; set; }
 
-		/// <summary>
-		/// The flag to indicate if the SiPEBI version is a user version
-		/// </summary>
 		public bool UserVersion { get; set; }
+
+		public string CurrentVersion { get; set; }
+
+		public string LatestVersion { get; set; }
+
+		public bool NewVersionIsAvailable { get; set; }
+
+		public string UpdateCheckText { get; set; }
+
+		public string VersionText { get; set; }
+		public bool GetUpdateIsRunning { get; set; }
+
 
 		///// <summary>
 		///// The users password, use SecureString so that: 
@@ -36,6 +51,8 @@ namespace Sipebi.Core {
 		///// </summary>
 		//public SecureString Password { get; set; }
 		#endregion
+
+		public static LoginViewModel DesignInstance = new LoginViewModel() { NewVersionIsAvailable = true, VersionText = "Versi: 1.0.0.0 Pengguna" };
 
 		#region Commands
 
@@ -48,6 +65,11 @@ namespace Sipebi.Core {
 		/// The command to register for a new account
 		/// </summary>
 		public ICommand RegisterCommand { get; set; }
+
+		/// <summary>
+		/// The command to go to the webpage containing the latest application version
+		/// </summary>
+		public ICommand GetUpdateCommand { get; set; }
 		#endregion
 
 		#region Constructor
@@ -58,6 +80,39 @@ namespace Sipebi.Core {
 			//Normally we don't pass parameter, but this password is exception
 			LoginCommand = new RelayParameterizedCommand(async (parameter) => await LoginAsync(parameter));
 			RegisterCommand = new RelayCommand(async () => await RegisterAsync());
+			GetUpdateCommand = new RelayCommand(async () => await GetUpdateAsync());
+
+			//Should now check from the internet if we may get any latest SiPEBI version
+			checkUpdate();
+		}
+
+		private async Task GetUpdateAsync() {
+			await RunCommandAsync(() => GetUpdateIsRunning, async () => {
+				await Task.Run(() => {
+					System.Diagnostics.Process.Start(DH.GetUpdateUrl);
+				});
+			});
+		}
+
+
+		private async void checkUpdate() {
+			UserVersion = PH.SipebiUserMode;
+			VersionText = "Versi: " + PH.SoftwareVersion;
+			string version = Info.GetFileVersionFor(Assembly.GetExecutingAssembly());
+			try {
+				HttpWebRequest request = (HttpWebRequest)WebRequest.Create(DH.UpdateCheckUrl);
+				request.Method = "GET";
+				request.Timeout = 10000;
+				WebResponse response = await request.GetResponseAsync(); //This async seems to work really well
+				StreamReader loResponseStream = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding(1252));
+				string responseText = loResponseStream.ReadToEnd();
+				response.Close();
+				loResponseStream.Close();
+				LatestVersion = responseText;
+				NewVersionIsAvailable = !string.IsNullOrWhiteSpace(LatestVersion) && LatestVersion != version;
+				UpdateCheckText = "Dapatkan Versi Terbaru: " + LatestVersion;
+			} catch { //do nothing for now if the update fails
+			}
 		}
 
 		/// <summary>

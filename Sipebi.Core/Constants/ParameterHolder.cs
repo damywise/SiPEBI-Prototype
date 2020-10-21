@@ -80,8 +80,7 @@ namespace Sipebi.Core {
     public static readonly bool SipebiUserMode = true;
 
     public static string SipebiVersionString = SipebiUserMode ? "Pengguna" : "Editor";
-    public static string SipebiVersionFullString = "Versi: " + SipebiVersionString;
-
+    
     public static readonly string SipebiDataFilename = DH.DataFilename + "." + DH.SipebiE;
     public static readonly string SipebiSettingsFilename = DH.SettingsFilename + "." + DH.SipebiE;
 
@@ -92,6 +91,14 @@ namespace Sipebi.Core {
       (SipebiUserMode ? "icon_refined2.png" : "icon_editor2.png");
 
     public static string SipebiBuildDate = string.Empty;
+
+    /// <summary>
+    /// The string to indicate SiPEBI latest version. 
+    /// If null, it means SiPEBI fails to check what is the latest version from the internet.
+    /// </summary>
+    //public static string SipebiLatestVersion { get; set; }
+
+    //public static bool SipebiLatestVersionIsAvailable { get; set; }
 
     /// <summary>
     /// The string for the software version of SiPEBI

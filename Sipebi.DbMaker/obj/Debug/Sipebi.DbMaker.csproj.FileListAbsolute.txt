@@ -127,3 +127,5 @@ C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.DbMaker\obj\Debug\Sipebi.DbMaker.csproj.C
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.DbMaker\obj\Debug\Sipebi.DbMaker.csproj.CopyComplete
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.DbMaker\obj\Debug\Sipebi.DbMaker.exe
 C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.DbMaker\obj\Debug\Sipebi.DbMaker.pdb
+C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.DbMaker\bin\Debug\Extension.Versioning.dll
+C:\ASTrio\VS2017\Desktop\Sipebi\Sipebi.DbMaker\bin\Debug\Extension.Versioning.pdb

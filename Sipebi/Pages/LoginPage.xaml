@@ -10,10 +10,10 @@
   x:Name="Page"
   mc:Ignorable="d" 
   d:DesignHeight="600" d:DesignWidth="800"
+  d:DataContext="{x:Static core:LoginViewModel.DesignInstance}"
   >
   <Border>
     <Grid>
-
       <!-- Main content scroll-->
       <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -24,7 +24,7 @@
                   BorderBrush="{StaticResource ForegroundGoldenrodBrush}"
                   BorderThickness="3"
                   Width="360"
-                  Margin="35">
+                  Margin="35 5">
             <StackPanel>
               <!--<Border Margin="120 0"
                                 Background="DarkBlue"
@@ -92,15 +92,41 @@
                       CommandParameter="{Binding ElementName=Page}" 
                       HorizontalAlignment="Center"/>
               
-              <Button Style="{StaticResource TextButton}" Visibility="Collapsed"
-                  Command="{Binding RegisterCommand}"
-                  Content="Buat akun baru"
-                  HorizontalAlignment="Center"/>
               <TextBlock Style="{StaticResource DisplayText}" 
-                         Text="{x:Static core:PH.SipebiVersionFullString}"/>
+                         Text="{Binding VersionText}"/>
             </StackPanel>
           </Border>
 
+          <!--<Button Content="{Binding UpdateCheckText}"                       
+                      IsDefault="True"
+                      Command="{Binding UpdateCheckCommand}"
+                      HorizontalAlignment="Center"/>-->
+
+          <!--<Border Background="DarkRed" 
+                  CornerRadius="15"
+                  BorderBrush="{StaticResource ForegroundGoldenrodBrush}"
+                  Visibility="{Binding NewVersionIsAvailable,
+                      Converter={local:GoodBooleanToVisibilityConverter}, ConverterParameter='collapsed'}"
+                  BorderThickness="3"                 
+          Background="{StaticResource BackgroundDeeperRedBrush}"
+          Foreground="{StaticResource ForegroundGoldBrush}"
+                  Width="360">-->
+          <Button Content="{Binding UpdateCheckText}"
+                  Visibility="{Binding NewVersionIsAvailable, Converter={local:GoodBooleanToVisibilityConverter}, ConverterParameter='collapsed'}"
+                  Padding="10 5" Margin="5" Width="360"
+                  BorderThickness="2"        
+                  Background="DarkGreen"
+                  BorderBrush="{StaticResource BackgroundGoldBrush}"                  
+                  FontSize="{StaticResource FontSizeLarge}"
+                  Command="{Binding GetUpdateCommand}"
+                  HorizontalAlignment="Center"/>
+
+          <!--<TextBlock Text="{Binding UpdateCheckText}"
+                      FontFamily="{StaticResource LatoRegular}"
+                      FontSize="{StaticResource FontSizeLarge}"
+                      Foreground="{StaticResource ForegroundGoldBrush}">
+            </TextBlock>-->
+          <!--</Border>-->
         </StackPanel>
       </ScrollViewer>
     </Grid>
